@@ -1,0 +1,7 @@
+{
+  "name": "gamedex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
