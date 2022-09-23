@@ -266,16 +266,20 @@ $eighthiary: #312457; //color principal
 $errorColor: red; //color texto error
 
 
-
 ion-fab-button{
   --background: #FD7786;
   border-radius: 50%;
+}
+
+ion-app{
+  --background: #312457 !important;
 }
 
 ion-content{
   // --background: #141415 !important;
   --background: #312457 !important;
 }
+
 
 ion-menu{
 
