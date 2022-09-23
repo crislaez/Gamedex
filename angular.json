@@ -44,6 +44,10 @@
             "production": {
               "fileReplacements": [
                 {
+                  "replace": "src/app/core/build-specifics/index.ts",
+                  "with": "src/app/core/build-specifics/index.prod.ts"
+                },
+                {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
@@ -148,7 +152,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

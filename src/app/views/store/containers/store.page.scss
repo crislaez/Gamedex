@@ -1,0 +1,43 @@
+@import '../../../../theme/variables.scss';
+
+.class-ion-button{
+  --background: $primary !important;
+  --color: #FD7786 !important;
+}
+
+
+gamedex-carrusel{
+  width: 94%;
+  margin: 0 auto;
+  height: 13em;
+}
+
+ion-img{
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.item-banner{
+  width: 90% !important;
+  margin-top: -70px;
+}
+
+.date-content{
+  >div{
+    width: 45%;
+  }
+}
+
+ion-card{
+  padding: 10px;
+  background: rgba(255,255,255, 0.1);
+  color: $tertiary;
+  // margin-top: 20px;
+
+  ion-button{
+    text-transform: initial;
+    --background: #FB6C6C;
+    padding: 5px;
+  }
+
+}

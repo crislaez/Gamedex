@@ -12,7 +12,12 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": ["es2018", "dom"]
+    "lib": ["es2018", "dom"],
+    "paths":{
+      "@gamedex/shared/*": ["./src/app/shared/*"],
+      "@gamedex/core/*": ["./src/app/core/*"],
+      "@gamedex/shared-ui/*": ["./src/app/shared-ui/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
