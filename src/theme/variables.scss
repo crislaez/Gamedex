@@ -331,7 +331,7 @@ cdk-virtual-scroll-viewport {
 }
 
 .div-clear{
-  width: 10%;
+  width: 5%;
   height: 50px;
 }
 
@@ -404,12 +404,12 @@ ion-select-option{
 ion-header{
   // background: $primary;
   background: $secondary;
+  overflow: hidden;
   // background-image: url('/assets/images/degradate.png');
   // background-repeat: repeat;
   height: 50px;
 
   ion-toolbar{
-    width: 100%;
     --background: $primary;
     // --background: $secondary;
     border: 0px !important;
@@ -419,11 +419,15 @@ ion-header{
     // border-width: none !important;
 
     ion-title{
+      width: 85%;
       text-align: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       // font-weight: bold !important;
-      text-shadow: 1px 1px 2px black;
+      text-align: start;
+      // text-shadow: 1px 1px 2px black;
       font-weight: 800;
-      font-size: 21px;
+      font-size: 25px;
     }
 
     div{
@@ -446,8 +450,8 @@ ion-tab-bar{
 
 //buscador
 form{
-  // width: 80%;
-  width: 70%;
+  width: 80%;
+  // width: 70%;
   // margin: auto;
   // padding-top: 30px;
   // margin-top: 10px;

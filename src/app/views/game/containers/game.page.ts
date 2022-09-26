@@ -141,14 +141,14 @@ export class GamePage {
     {id:5, field:'stores', title:'COMMON.STORES', hash:'stores', extra:'store'},
   ];
 
-  trigger = new EventEmitter<{ gameId: string }>();
-  componentStatus: {gameId: string};
+  trigger = new EventEmitter<{ gameId: string, reload: boolean }>();
+  componentStatus: {gameId: string, reload: boolean};
 
   status$ = this.store.select(fromGame.selectSingleGameStatus);
   game$ = this.trigger.pipe(
     concatLatestFrom(() => this.store.select(fromGame.selectSingleGameList)),
-    tap(([{gameId = null}, gameList = null ]) => {
-      if(!gameList?.[gameId]){
+    tap(([{gameId = null, reload}, gameList = null ]) => {
+      if(!gameList?.[gameId] || !!reload){
         this.store.dispatch(GameActions.loadSingleGame({gameId: Number(gameId)}))
       }
     }),
@@ -168,6 +168,7 @@ export class GamePage {
   ionViewWillEnter(): void {
     this.componentStatus = {
       gameId: this.route.snapshot.params?.['gameId'],
+      reload: false
     };
     this.trigger.next(this.componentStatus);
   }
@@ -175,6 +176,10 @@ export class GamePage {
   // REFRESH
   doRefresh(event) {
     setTimeout(() => {
+      this.componentStatus = {
+        gameId: this.route.snapshot.params?.['gameId'],
+        reload: true
+      };
       this.trigger.next(this.componentStatus);
       event.target.complete();
     }, 500);
@@ -182,8 +187,8 @@ export class GamePage {
 
   getItemElement(items: any[], field: string): any {
     return !field
-    ? items
-    : (items || [])?.map(item => (item?.[field]))
+          ? items
+          : (items || [])?.map(item => (item?.[field]))
   }
 
   // SCROLL EVENT

@@ -19,10 +19,10 @@ import { filter, map } from 'rxjs/operators';
         <ion-back-button *ngIf="!['home']?.includes(currentSection?.route)" class="text-color-light" slot="start" [defaultHref]="redirectoTo(currentSection)" [text]="''"></ion-back-button>
 
         <!-- title  -->
-        <ion-title class="text-color-light big-size capital-letter">{{ replaceTitle(currentSection?.label) | translate }}</ion-title>
+        <ion-title class="text-color-light capital-letter" slot="start" >{{ replaceTitle(currentSection?.label) | translate }}</ion-title>
 
         <!-- empty div  -->
-        <div *ngIf="!['home']?.includes(currentSection?.route)" size="small" slot="end" class="div-clear" ></div>
+        <!-- <div *ngIf="!['home']?.includes(currentSection?.route)" size="small" slot="end" class="div-clear" ></div> -->
       </ion-toolbar>
     </ion-header>
 
